@@ -13,6 +13,7 @@ git --version
 gh --version
 ```
 
+
 ## 2. Configure Git
 
 Set your Git username and email address:
@@ -34,6 +35,7 @@ git config --global --list
 git config --global user.email "YOUR_NOREPLY_EMAIL"
 ```
 
+
 ## 3. Authenticate with GitHub
 
 GitHub CLI simplifies authentication:
@@ -49,6 +51,7 @@ Verify your login:
 ```bash
 gh auth status
 ```
+
 
 ## 4. Navigate to Your Project
 
@@ -71,6 +74,7 @@ pwd
 ls -la
 ```
 
+
 ## 5. Initialize Git
 
 Inside your project directory, run:
@@ -91,6 +95,7 @@ node_modules/
 ```
 
 Adapt it to your project's requirements. Never upload passwords, API keys, or private credentials.
+
 
 ## 6. Stage and Commit Your Files
 
@@ -113,6 +118,7 @@ git commit -m "Initial commit"
 ```
 
 A commit records a snapshot of the staged changes.
+
 
 ## 7. Create a GitHub Repository
 
@@ -152,98 +158,9 @@ git push
 
 You only need to create the repository once.
 
-## 9. Common Errors and Solutions
 
-### `cd: expected 1 arguments; got 2`
 
-**Cause:** The directory path contains spaces.
-
-**Solution:**
-
-```bash
-cd "/path/to/your folder"
-```
-
-### `fatal: not a git repository`
-
-**Cause:** You are outside the repository or Git has not been initialized.
-
-**Solution:**
-
-```bash
-cd /path/to/your/project
-git init
-```
-
-Only initialize Git if the directory is intended to be a new repository.
-
-### `nothing to commit, working tree clean`
-
-**Cause:** No new changes are available to commit.
-
-**Check:**
-
-```bash
-git status
-git log -1 --oneline
-```
-
-If your changes are already committed, you may only need to push them.
-
-### `push declined due to email privacy restrictions`
-
-**Cause:** GitHub rejected the email associated with your commit.
-
-**Solution:** Configure your GitHub `noreply` email:
-
-```bash
-git config --global user.email "YOUR_NOREPLY_EMAIL"
-```
-
-If the rejected commit needs its author information updated:
-
-```bash
-git commit --amend --reset-author --no-edit
-git push
-```
-
-### `remote origin already exists`
-
-**Cause:** A remote named `origin` is already configured.
-
-**Solution:**
-
-```bash
-git remote -v
-git remote set-url origin https://github.com/YOUR_USERNAME/my-project.git
-```
-
-### `rejected (fetch first)`
-
-**Cause:** The remote repository contains commits missing from your local branch.
-
-**Solution:**
-
-```bash
-git pull --rebase origin main
-git push origin main
-```
-
-If conflicts occur, resolve them before continuing. Avoid force-pushing as a first solution.
-
-### Files appear at the repository root instead of the intended folder
-
-**Cause:** The repository was initialized in a different directory from the intended project structure.
-
-**Check the repository root:**
-
-```bash
-git rev-parse --show-toplevel
-```
-
-Organize files into the correct directories inside the repository, then stage, commit, and push the changes.
-
-## 10. Useful Git Commands
+## 9. Useful Git Commands
 
 | Command | Purpose |
 |---|---|
