@@ -175,10 +175,3 @@ You only need to create the repository once.
 | `git push` | Upload commits |
 | `git rev-parse --show-toplevel` | Find the repository root |
 
-## Conclusion
-
-The basic Git workflow is:
-
-**Initialize → Stage → Commit → Push**
-
-Once Git is configured and GitHub authentication is complete, you can manage your projects directly from the terminal without repeatedly uploading files through the GitHub website.
